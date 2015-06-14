@@ -8,5 +8,6 @@ This Course Project submission consists of two files:
 To view my Course Project Write-up compiled html file on the web, please click 
     [http://kuansw.github.io/PractMachLearn/ML_Project.html](http://kuansw.github.io/PractMachLearn/ML_Project.html)
 
-Thank youi,
+Thank you,  
+
   Kuan Siew Weng
