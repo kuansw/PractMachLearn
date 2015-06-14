@@ -123,9 +123,7 @@ has to be removed from the training dataset.
 Summary statistic columns of observation records have NA values, and shall be 
 removed as they are redundant for our prediction models.
 
-Finally, the first seven columns including timestamps, X and user_name 
-are dimensional data, which do not contribute to our prediction model.
-They shall also be removed from the training dataset.
+Finally, the first seven columns are dimensional data, which do not contribute to our prediction model.  They shall also be removed from the training dataset.
 
 After the data cleansing steps, the training dataset has 19216 records 
 remaining, and each cleansed record comprise of the response variable *classe*, 
@@ -182,7 +180,7 @@ fancyRpartPlot(rpart_fit, main="Decision Tree for Classe Prediction")
 
 ### Model Validation
 Using the fitted tree model for prediction on our validation dataset, 
-we found that the overall accuracy is only around 76.0%, with significant 
+we found that the overall accuracy is only around 75.950%, with significant 
 misclassification errors for every value of *classe*.
 ```{r}
 rpart_predicted <- predict(rpart_fit, newdata=val_ds, type="class")
@@ -222,7 +220,7 @@ print(rf_fit$finalModel)
 
 ### Model Validation
 Fitting the trained Randowm Forest model to the validation dataset, we found that
-the Random Forest Model achieved a very high overall accuracy of **99.3%**, which 
+the Random Forest Model achieved a very high overall accuracy of **99.31%**, which 
 is much better than our first prediction model based on Decision Tree.
 ```{r}
 rf_predicted <- predict(rf_fit, newdata=val_ds)
@@ -360,11 +358,11 @@ plot(val_ds$classe, rpart_predicted, col=4:8,
      main="Decision Tree Model")
      
 plot(val_ds$classe, rf_predicted, col=4:8,
-     xlab="Reference Classe Values", ylab="Predicted Classe Values",
+     xlab="Reference Classe Values", ylab="",
      main="Random Forest (All Predictors)")
 
 plot(val_ds$classe, rf_predicted2, col=4:8,
-     xlab="Reference Classe Values", ylab="Predicted Classe Values",
+     xlab="Reference Classe Values", ylab="",
      main="Random Forest (7 Key Predictors)")
 ```
    
